@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Demo — Mobile Friendly</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="#">MySite</a>
+      </div>
+
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Make your site mobile-friendly</h1>
+          <p>Learn how responsive layouts, media queries and flexible images make a website adapt to any device.</p>
+          <a class="btn" href="#features">Learn more</a>
+        </div>
+        <div class="hero-image">
+          <img src="https://picsum.photos/800/520?2" alt="Mockup">
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features container">
+      <article class="feature">
+        <h3>Responsive</h3>
+        <p>Layouts that flow and re-order for smaller screens.</p>
+      </article>
+      <article class="feature">
+        <h3>Fast</h3>
+        <p>Efficient CSS and optimized images improve load times on mobile data.</p>
+      </article>
+      <article class="feature">
+        <h3>Accessible</h3>
+        <p>Readable text sizes, tappable targets, and clear contrast.</p>
+      </article>
+    </section>
+
+    <section class="two-column container">
+      <div class="col main-col">
+        <h2>Article Title</h2>
+        <p>This column contains the main content. On mobile it stacks above the sidebar so reading is linear and easy.</p>
+      </div>
+      <aside class="col side-col">
+        <h3>Sidebar</h3>
+        <p>Support links, recent posts, or contact info go here.</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 MySite — responsive demo</p>
+    </div>
+  </footer>
+
+<script>
+  // small JS to toggle mobile nav
+  (function () {
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+    });
+  })();
+  
+</script>
+</body>
+</html>

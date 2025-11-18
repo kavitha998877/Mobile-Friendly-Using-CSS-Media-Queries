@@ -1,0 +1,59 @@
+/* styles.css - mobile-first responsive stylesheet */
+
+/* Reset & box-sizing */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: system-ui, Arial, sans-serif; font-size: 16px; line-height: 1.4; -webkit-font-smoothing:antialiased; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* Container utility */
+.container { width: 100%; padding: 0 1rem; margin: 0 auto; max-width: 1100px; }
+
+/* Header */
+.site-header { background: #0b2545; color: white; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.75rem 0; }
+.brand a { color: white; font-weight: 700; font-size: 1.125rem; text-decoration: none; }
+
+/* Nav - mobile first (hidden until toggled) */
+.nav-toggle {
+  background: transparent; border: none; display: inline-flex; flex-direction: column; gap: 4px; padding: 6px;
+}
+.nav-toggle .bar { width: 22px; height: 2px; background: white; display:block; border-radius:2px; }
+
+.site-nav {
+  position: absolute; top: 60px; right: 1rem; background: rgba(11,37,69,0.98); border-radius: 6px;
+  padding: 0.5rem; display: none; width: 200px;
+}
+.site-nav.open { display: block; }
+.site-nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.25rem; }
+.site-nav a { color: white; text-decoration: none; padding: 0.5rem 0.5rem; display:block; }
+
+/* Hero */
+.hero { padding: 1.25rem 0; background: linear-gradient(180deg,#f7fbff,#eef6ff); }
+.hero-inner { display: grid; grid-template-columns: 1fr; gap: 1rem; align-items:center; }
+.hero-text h1 { font-size: 1.5rem; margin-bottom:0.5rem; }
+.btn { display:inline-block; margin-top:0.75rem; padding:0.6rem 1rem; background:#0b6bff; color:white; text-decoration:none; border-radius:6px; }
+
+/* Features - stacked on mobile */
+.features { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1rem 0; }
+.feature { background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 1px 6px rgba(0,0,0,0.05); }
+
+/* Two-column section stacks on mobile */
+.two-column { display: grid; grid-template-columns: 1fr; gap: 1rem; padding-bottom: 2rem; }
+.col { background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 1px 6px rgba(0,0,0,0.05); }
+
+/* Footer */
+.site-footer { background: #0b2545; color: white; padding: 1rem 0; text-align: center; }
+
+/* Larger screens - breakpoints (desktop styles) */
+@media (min-width: 769px) {
+  /* Show nav inline and hide the hamburger */
+  .nav-toggle { display: none; }
+  .site-nav { position: static; display: block; width: auto; background: transparent; padding:0; }
+  .site-nav ul { flex-direction: row; gap: 1rem; align-items: center; }
+  .site-nav a { color: white; padding: 0; }
+
+  .hero-inner { grid-template-columns: 1fr 1fr; gap: 2rem; padding: 2rem 0; }
+  .hero-text h1 { font-size: 2rem; }
+  .features { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .two-column { grid-template-columns: 2fr 1fr; gap: 1.5rem; }
+}
